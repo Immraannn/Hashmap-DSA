@@ -39,3 +39,17 @@ int main()
 | 4 | 2      | `freq[2]++` | `{1:2, 2:2, 3:1}`      |
 | 5 | 1      | `freq[1]++` | `{1:3, 2:2, 3:1}`      |
 
+
+    unordered_map Properties (C++)
+Stores data as Key → Value pairs.
+Keys are unique (duplicate keys are not allowed).
+Values can be duplicated.
+Uses hashing internally.
+No ordering of elements (neither insertion order nor sorted order).
+Average time complexity:
+Insert: O(1)
+Search: O(1)
+Delete: O(1)
+Worst-case complexity:
+Insert/Search/Delete: O(n) (due to hash collisions).
+
