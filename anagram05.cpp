@@ -5,35 +5,17 @@
 using namespace std;
 vector<vector<string>> groupAnagrams(vector<string>& strs)
 {
-    // Key   -> Sorted version of a word
-    // Value -> All original words having the same sorted form
     unordered_map<string, vector<string>> mp;
     for (string word : strs)
     {
-        // Make a copy because we don't want to modify
-        // the original word stored in the array
         string sortedWord = word;
         // "ate" -> "aet"
         sort(sortedWord.begin(), sortedWord.end());
-
-        // Insert the original word into the vector
-        // Example:
-        // mp["aet"].push_back("eat");
-        // mp["aet"].push_back("tea");
-        // mp["aet"].push_back("ate");
         mp[sortedWord].push_back(word);
     }
-
-    // This vector will store the final grouped anagrams
     vector<vector<string>> ans;
-
-    // Traverse every entry in the HashMap
     for (auto it : mp)
     {
-        // it.first  -> Sorted string (Key)
-        // it.second -> Vector of original strings (Value)
-
-        // Store the grouped anagrams in the answer
         ans.push_back(it.second);
     }
 
@@ -44,23 +26,18 @@ vector<vector<string>> groupAnagrams(vector<string>& strs)
 int main()
 {
     vector<string> strs = {"eat","tea","tan","ate","nat","bat"};
-
     // Function call
     vector<vector<string>> ans = groupAnagrams(strs);
-
     cout << "Grouped Anagrams:\n";
-
     // Print every group
     for (auto group : ans)
     {
         cout << "[ ";
-
         // Print every word inside the current group
         for (string word : group)
         {
             cout << word << " ";
         }
-
         cout << "]" << endl;
     }
 
