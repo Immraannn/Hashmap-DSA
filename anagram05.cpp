@@ -3,35 +3,20 @@
 #include <unordered_map>
 #include <algorithm>
 using namespace std;
-
-// Function to group all anagrams together
 vector<vector<string>> groupAnagrams(vector<string>& strs)
 {
-    // HashMap:
     // Key   -> Sorted version of a word
     // Value -> All original words having the same sorted form
     unordered_map<string, vector<string>> mp;
-
-    // Traverse each word in the input array
     for (string word : strs)
     {
         // Make a copy because we don't want to modify
         // the original word stored in the array
         string sortedWord = word;
-
-        // Sort the copied word
-        // Example:
-        // "tea" -> "aet"
-        // "eat" -> "aet"
         // "ate" -> "aet"
         sort(sortedWord.begin(), sortedWord.end());
 
         // Insert the original word into the vector
-        // corresponding to its sorted form.
-        //
-        // If the key doesn't exist,
-        // unordered_map automatically creates an empty vector.
-        //
         // Example:
         // mp["aet"].push_back("eat");
         // mp["aet"].push_back("tea");
