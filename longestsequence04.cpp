@@ -23,8 +23,7 @@ int longestConsecutive(vector<int>& nums)
     // Traverse every element in the array
     for (int num : nums)
     {
-        // Check whether the current number is the START of a sequence.
-        // If (num - 1) does not exist, then num is the first element.
+        //"If num - 1 does not exist in the HashMap."
         if (mp.find(num - 1) == mp.end())
         {
             // Start counting the sequence from 'num'
