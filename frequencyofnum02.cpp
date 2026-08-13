@@ -2,18 +2,14 @@
 #include <vector>
 #include <unordered_map>
 using namespace std;
-
 // Function to print frequency of each element
 void frequencyCount(vector<int>& arr)
 {
     unordered_map<int, int> freq;
-
-    // Count frequency
     for (int i = 0; i < arr.size(); i++)
     {
         freq[arr[i]]++;
     }
-
     // Print frequencies
     for (auto it : freq)
     {
