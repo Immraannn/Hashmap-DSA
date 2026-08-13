@@ -2,13 +2,9 @@
 #include <vector>
 #include <unordered_map>
 using namespace std;
-
 // Function to find the length of the longest consecutive sequence
 int longestConsecutive(vector<int>& nums)
 {
-    // HashMap stores:
-    // Key   -> Array element
-    // Value -> true (indicates the element exists)
     unordered_map<int, bool> mp;
     for (int num : nums)
     {
@@ -21,8 +17,7 @@ int longestConsecutive(vector<int>& nums)
     {
         //"If num - 1 does not exist in the HashMap."
         if (mp.find(num - 1) == mp.end())
-        {
-            // Start counting the sequence from 'num'
+        {// Start counting the sequence from 'num'
             int current = num;
             int length = 1;
             // Continue while the next consecutive number exists
@@ -38,7 +33,6 @@ int longestConsecutive(vector<int>& nums)
     // Return the longest consecutive sequence length
     return longest;
 }
-
 int main()
 {
     vector<int> nums = {100, 4, 200, 1, 3, 2};
