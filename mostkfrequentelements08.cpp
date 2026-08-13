@@ -11,7 +11,6 @@ vector<int> topKFrequent(vector<int>& nums, int k)
     // Key   -> Element
     // Value -> Frequency
     unordered_map<int, int> freq;
-
     // Count frequency of each element
     for (int num : nums)
     {
@@ -27,6 +26,7 @@ vector<int> topKFrequent(vector<int>& nums, int k)
         greater<pair<int,int>>
     > minHeap;
 
+   // priority_queue<   WHAT,   WHERE,   HOW_TO_PRIORITIZE   >
     // Traverse frequency map
     for (auto it : freq)
     {
