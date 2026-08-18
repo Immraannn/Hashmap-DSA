@@ -3,43 +3,25 @@
 #include <unordered_map>
 #include <queue>
 using namespace std;
-
 // Function to return the k most frequent elements
 vector<int> topKFrequent(vector<int>& nums, int k)
 {
-    // HashMap:
-    // Key   -> Element
-    // Value -> Frequency
     unordered_map<int, int> freq;
-    // Count frequency of each element
     for (int num : nums)
     {
         freq[num]++;
     }
-
-    // Min Heap
-    // pair.first  -> Frequency
-    // pair.second -> Element
-    priority_queue<
-        pair<int,int>,
-        vector<pair<int,int>>,
-        greater<pair<int,int>>
-    > minHeap;
-
-   // priority_queue<   WHAT,   WHERE,   HOW_TO_PRIORITIZE   >
-    // Traverse frequency map
+    priority_queue< pair<int,int>, vector<pair<int,int>>,greater<pair<int,int>>> minHeap;
     for (auto it : freq)
     {
         // Insert (frequency, element)
         minHeap.push({it.second, it.first});
-
         // Keep only k elements in heap
         if (minHeap.size() > k)
         {
             minHeap.pop();
         }
     }
-
     vector<int> ans;
 
     // Remaining heap contains top k frequent elements
