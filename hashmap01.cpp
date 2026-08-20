@@ -6,13 +6,8 @@ int main() {
 
     // Create a HashMap (Key -> Value)
     unordered_map<int, string> mp;
-
-    // ================= INSERT =================
-
-    // Method 1
     mp[1] = "Apple";
     mp[2] = "Banana";
-
     // Method 2
     mp.insert({3, "Mango"});
     mp.insert(make_pair(4, "Orange"));
