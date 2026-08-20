@@ -2,7 +2,6 @@
 #include <vector>
 #include <unordered_map>
 using namespace std;
-
 // Function to count the number of subarrays
 // whose sum is equal to k
 int subarraySum(vector<int>& nums, int k)
